@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>개인 정보 수정</title>
 
-<link rel="stylesheet" type="text/css" href="../resources/css/default.css" />
+<link rel="stylesheet" type="text/css" href="../resources/assets/css/default.css" />
 
 <script>
 //가입폼 확인

@@ -9,9 +9,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css" />">
+<link rel="stylesheet" href="<c:url value="/resources/assets/css/bootstrap.min.css" />">
 <!--웹폰트 -->
-<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css" />">
+<link rel="stylesheet" href="<c:url value="/resources/assets/css/bootstrap.min.css" />">
 <title>board read</title>
 
 
@@ -233,6 +233,6 @@
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+	<script src="/resources/assets/js/bootstrap.js"></script>
 </body>
 </html>
