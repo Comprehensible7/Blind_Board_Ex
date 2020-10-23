@@ -9,8 +9,7 @@
 <!-- 게시글 저장 -->
 <insert id="insertBoard" parameterType="board">
 	insert into 
-		web5_board 
-	(
+		web5_board (
 		boardnum
 		, id
 		, title

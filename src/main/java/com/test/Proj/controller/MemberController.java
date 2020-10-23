@@ -41,6 +41,8 @@ public class MemberController {
 	@RequestMapping (value="join", method=RequestMethod.POST)
 	public String join(Model model, MemberVO member) {
 		
+		logger.info("{}",member);
+		
 		int result = dao.insert(member);
 		if (result != 1) {
 			return "memberView/joinForm";

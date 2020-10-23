@@ -77,38 +77,30 @@ function formCheck() {
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top: 20px;">
-				<form id="joinform" action="join" method="post"
+				<form id="joinform" action="/member/join" method="post"
 					onsubmit="return formCheck();">
 					<h3 style="text-align: center;">会員加入</h3>
 					<div class="form-group">
-						<input type="text" name="id" id="id" maxlength="10"
-							placeholder="ID" class="form-control" value="${member.id}">
+						<input type="text" name="id" id="id" maxlength="10" placeholder="ID" class="form-control" >
 					</div>
 					<div class="form-group">
 						<input type="password" name="password" id="password"
-							placeholder="パスワード入力" class="form-control"
-							value="${member.password}"><br> <input
-							type="password" id="password2" placeholder="パスワードを再"
-							class="form-control" value="${member.password}">
+							placeholder="パスワード入力" class="form-control"><br> 
+							<input type="password" id="password2" placeholder="パスワードを再" class="form-control">
 					</div>
 					<div class="form-group">
-						<input type="text" name="name" id="name" placeholder="名前"
-							class="form-control" value="${member.name}">
+						<input type="text" name="name" id="name" placeholder="名前" class="form-control" >
 					</div>
 					<div class="form-group">
-						<input type="text" name="phone" placeholder="電話番号 "
-							class="form-control" value="${member.phone}">
+						<input type="text" name="phone" placeholder="電話番号 " class="form-control" >
 					</div>
 					<div class="form-group">
-						<input type="text" name="address" placeholder="住所 "
-							class="form-control" value="${member.address}">
+						<input type="text" name="address" placeholder="住所 " class="form-control" >
 					</div>
 					<div class="form-group">
-						<input type="text" name="email" id="email" placeholder="email"
-							class="form-control" value="${member.email}">
+						<input type="text" name="email" id="email" placeholder="email" class="form-control">
 					</div>
-					<input type="submit" class="btn btn-primary form-control"
-						value="会員加入"> 
+					<input type="submit" class="btn btn-primary form-control" value="会員加入"> 
 				
 				</form>
 			</div>

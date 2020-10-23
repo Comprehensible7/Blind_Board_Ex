@@ -9,9 +9,15 @@
 <!-- 회원 정보 저장 -->
 <insert id="insertMember" parameterType="member">
 	insert into 
-		web5_member 
-	values 
-		(#{id}, #{password}, #{name}, #{phone}, #{address}, #{email})
+		web5_member
+	values(
+		#{id}, 
+		#{password},
+		#{name}, 
+		#{phone}, 
+		#{address}, 
+		#{email}
+		)
 </insert>
 	
 <!-- 회원 정보 검색 -->
