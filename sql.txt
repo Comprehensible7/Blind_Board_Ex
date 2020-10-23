@@ -1,0 +1,41 @@
+--회원 정보 테이블
+create table web5_member (
+	id			varchar2(20) primary key,	
+	password	varchar2(20) not null,		
+	name		varchar2(20) not null,		
+	phone		varchar2(20),				
+	address		varchar2(100),				
+	email		varchar2(50)				
+);
+
+--게시판 본문 글 테이블
+create table web5_board (
+	boardnum	number primary key,		
+	id			varchar2(20) not null, 		
+	title		varchar2(200) not null,		
+	contents	varchar2(2000) not null, 	
+	inputdate	date default sysdate, 	
+	hits		number default 0,			
+	originalfile	varchar2(200),			
+	savedfile		varchar2(100)			
+);
+
+--게시판 글 번호에 사용할 시퀀스
+create sequence web5_board_seq;
+
+--댓글 테이블
+create table web5_reply (
+	replynum		number	primary key,		
+	boardnum		number not null,			
+	id				varchar2(20) not null,		
+	text			varchar2(200) not null,		
+	inputdate		date 	default sysdate,	
+	constraint reply_fk foreign key(boardnum)
+		references web5_board(boardnum) on delete cascade
+);
+
+--댓글 번호에 사용할 시퀀스
+create sequence web5_reply_seq;
+
+
+
