@@ -1,6 +1,7 @@
 package com.test.Proj.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
@@ -62,13 +63,15 @@ public class BoardDAO {
 	 * @param countPerPage 읽을 레코드 수 (한 페이지당 글 개수)
 	 * @return 글목록
 	 */
-	public ArrayList<BoardVO> listBoard(String searchText, int startRecord, int countPerPage) {
+	public ArrayList<BoardVO> listBoard(String searchText,String searchType, int startRecord, int countPerPage) {
 		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
 		//전체 검색 결과 중 읽을 시작위치와 개수
 		RowBounds rb = new RowBounds(startRecord, countPerPage);
-		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("searchText", searchText);
+		map.put("searchType", searchType);
 		//검색어와 읽을 범위를 전달
-		ArrayList<BoardVO> boardlist = mapper.listBoard(searchText, rb);
+		ArrayList<BoardVO> boardlist = mapper.listBoard(map, rb);
 		return boardlist;
 	}
 

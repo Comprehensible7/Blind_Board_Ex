@@ -84,6 +84,7 @@ public class BoardController {
 	public String list(
 			@RequestParam(value="page", defaultValue="1") int page
 			, @RequestParam(value="searchText", defaultValue="") String searchText
+			, @RequestParam(value="searchType",defaultValue="") String searchType
 			, Model model) {
 		
 		logger.debug("page: {}, searchText: {}", page, searchText);
@@ -94,7 +95,7 @@ public class BoardController {
 		PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
 		
 		//검색어와 시작 위치, 페이지당 글 수를 전달하여 목록 읽기
-		ArrayList<BoardVO> boardlist = dao.listBoard(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+		ArrayList<BoardVO> boardlist = dao.listBoard(searchText,searchType, navi.getStartRecord(), navi.getCountPerPage());	
 		
 		//페이지 정보 객체와 글 목록, 검색어를 모델에 저장
 		model.addAttribute("boardlist", boardlist);

@@ -156,11 +156,11 @@ form {
 				<br>
 		<div>
 			<form id="pagingForm" method="get" action="list">
-				<select name="searchTitle">
+				<div class="form-group">
+				<select name="searchType">
 					<option value="title">タイトル</option>
 					<option value="name">作成者</option>
- 				</select>
-				<div class="form-group">
+ 				</select> 
 				<input type="hidden" name="page" id="page" /> 
 			    <input type="text"  name="searchText" value="${searchText}"/> 
 			    <input type="button"  onclick="pagingFormSubmit(1)" value="検索">

@@ -33,20 +33,32 @@
 </insert>
 
 <!-- 게시글 읽기 -->
-<select id="getBoard" parameterType="int" resultType="board">
+<select id="getBoard" parameterType="hashmap" resultType="board">
 	select 
-		boardnum
-		, id
-		, title
-		, contents
-		, to_char(inputdate, 'YYYY-MM-DD HH24:MI:SS') inputdate
-		, hits
-		, originalfile
-		, savedfile
+		b.boardnum as boardnum
+		, b.id as b
+		, b.title as title
+		, b.contents as contents
+		, b.to_char(inputdate, 'YYYY-MM-DD HH24:MI:SS') as inputdate
+		, b.hits as hits
+		, b.originalfile as originalfile
+		, b.savedfile as savedfile
 	from 
-		web5_board
+		web5_board b, web5_member m
 	where 
-		boardnum = #{boardnum}
+		b.boardnum = #{boardnum}
+	and
+		b.id = m.id
+		<if test="searchType == 'title">
+				and
+					b.title like '%' || #{searchText} || '%'
+			</if>
+			<if test="searchType == 'name'">
+				and
+					m.name like '%' || #{searchText} || '%'
+			</if>
+		order by
+			b.boardnum desc
 </select>
 
 <!-- 조회수 1 증가 -->
@@ -72,20 +84,30 @@
 </select>
 
 <!-- 현재 페이지 목록 (검색 필터링 후) -->
-<select id="listBoard" parameterType="string" resultType="board">
+<select id="listBoard" parameterType="hashmap" resultType="board">
 	select 
-		boardnum
-		, id
-		, title
-		, to_char(inputdate, 'YYYY-MM-DD') inputdate
-		, hits
+		b.boardnum as boardnum
+		, b.id as id
+		, b.title as title
+		, b.contents as contents
+		, to_char(b.inputdate, 'YYYY-MM-DD HH24:MI:SS') as inputdate
+		, b.hits as hits
+		, b.originalfile as originalfile
+		, b.savedfile as savedfile
 	from 
-		web5_board 
-	<if test="_parameter != null">
+		web5_board b, web5_member m
 	where 
-		title like '%' || #{searchText} || '%'
-	</if>
-	order by boardnum desc
+		b.id = m.id
+		<if test="searchType == 'title'">
+				and
+					b.title like '%' || #{searchText} || '%'
+			</if>
+			<if test="searchType == 'name'">
+				and
+					m.name like '%' || #{searchText} || '%'
+			</if>
+		order by
+			b.boardnum desc
 </select>
 
 

@@ -1,6 +1,7 @@
 package com.test.Proj.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.ibatis.session.RowBounds;
 
@@ -20,7 +21,7 @@ public interface BoardMapper {
 	//검색 후의 총 글 개수
 	public int getTotal(String searchText);
 	//검색 후의 현재 페이지 목록
-	public ArrayList<BoardVO> listBoard(String searchText, RowBounds rb);
+	public ArrayList<BoardVO> listBoard(HashMap<String, Object> searchType, RowBounds rb);
 	//글번호와 아이디로 해당 게시글 삭제
 	public int deleteBoard(BoardVO board);
 	//글 수정
