@@ -156,6 +156,10 @@ form {
 				<br>
 		<div>
 			<form id="pagingForm" method="get" action="list">
+				<select name="searchTitle">
+					<option value="title">タイトル</option>
+					<option value="name">作成者</option>
+ 				</select>
 				<div class="form-group">
 				<input type="hidden" name="page" id="page" /> 
 			    <input type="text"  name="searchText" value="${searchText}"/> 

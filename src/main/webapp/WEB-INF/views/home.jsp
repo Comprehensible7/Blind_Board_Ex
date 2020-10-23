@@ -63,12 +63,15 @@
 	<div class="container">
 		<div class="jumbotron">
 			<div class="container">
-				<h1>BBS PROJECT</h1>
+				<p>과한 비난과 욕설은 삼가해 주세요.<br> 
+				저희의 프로젝트를 여러분의 손으로 지켜주세요<br>
+				감사합니다.</p>
+				<!-- <h1>BBS PROJECT</h1>
 				<p>
 					* framework- Spring 4.3.6 <br> - Mybatis 3.4.6<br> -
 					JSP, JSTL, HTML, CSS, JavaScript<br> - join, login, logout, 
 					board,create,read,update,delete ,fileupload,reply<br> <br>
-				</p>
+				</p> -->
 			</div>
 		</div>
 	</div>
