@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 회원정보 처리 SQL -->
-<mapper namespace="jp.co.nbbs.dao.MemberMapper">
+<mapper namespace="com.team.Proj.dao.MemberMapper">
 
 <!-- 회원 정보 저장 -->
 <insert id="insertMember" parameterType="member">

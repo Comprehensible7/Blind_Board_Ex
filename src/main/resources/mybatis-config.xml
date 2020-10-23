@@ -4,9 +4,9 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="jp.co.nbbs.vo.MemberVO" alias="member" />
-		<typeAlias type="jp.co.nbbs.vo.BoardVO" alias="board" />
-		<typeAlias type="jp.co.nbbs.vo.ReplyVO" alias="reply" />
+		<typeAlias type="com.team.Proj.vo.MemberVO" alias="member" />
+		<typeAlias type="com.team.Proj.vo.BoardVO" alias="board" />
+		<typeAlias type="com.team.Proj.vo.ReplyVO" alias="reply" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/memberMapper.xml" />
