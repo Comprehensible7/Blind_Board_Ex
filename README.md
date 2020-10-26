@@ -41,25 +41,6 @@
 - メンバーは自分が書いたものに対してのみ修正と削除が
   可能です。
 
-## 機能
-
-# join
-![](./join.gif)
-# login
-![](./login.gif)
-# board_create
-![](./write.gif)
-# board_read
-![](./read.gif)
-# board_update
-![](./update.gif)
-# board_delete
-![](./delete.gif)
-# reply_create
-![](./replywrite.gif)
-# board_search
-![](./search.gif)
-
 
 ## 保安点
 
