@@ -53,7 +53,7 @@
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top: 20px;">
-				<form id="loginForm" action="login" method="post"
+				<form id="loginForm" action="/member/login" method="post"
 					onSubmit="return formCheck();">
 					<h3 style="text-align: center;">ログイン</h3>
 					<div class="form-group">

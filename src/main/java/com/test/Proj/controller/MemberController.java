@@ -127,11 +127,11 @@ public class MemberController {
 	@RequestMapping (value="login", method=RequestMethod.POST)
 	public String login(Model model, HttpSession session, String id, String password) {
 		MemberVO member = dao.getMember(id);
+		System.out.println(id+" "+password);
+		System.out.println(member);
 		
 		//ID가 존재하고 비밀번호도 맞으면 세션에 ID와 이름을 저장하고 메인화면으로 리다이렉트
 		if (member != null && member.getPassword().equals(password)) {
-			session.setAttribute("loginId", member.getId());
-			session.setAttribute("loginName", member.getName());
 			return "redirect:/";
 		}
 		//ID가 없거나 비밀번호가 틀리면 로그인 화면으로 다시 포워딩
